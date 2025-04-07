@@ -1,0 +1,14 @@
+{
+    "name": "js-rag-server",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "dotenv": "latest",
+      "langchain": "latest",
+      "@langchain/openai": "latest",
+      "@langchain/community": "latest"
+    }
+  }
