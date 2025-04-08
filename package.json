@@ -2,71 +2,141 @@
     
 
 
-   "name": "js-rag-server",
+
+
+
+"name": "js-rag-server",
     
 
 
-   "version": "1.0.0",
+
+
+
+"version": "1.0.0",
     
 
 
-   "type": "module",
+
+
+
+"type": "module",
     
 
 
-   "scripts": {
+
+
+
+"scripts": {
     
 
 
-       
 
 
-   "start": "node local-server.js"
+
     
 
 
-   },
+
+
+
+"start": "node local-server.js"
     
 
 
-   "dependencies": {
+
+
+
+},
     
 
 
-       
 
 
-   "@langchain/community": "latest",
+
+"dependencies": {
     
 
 
-       
 
 
-   "@langchain/openai": "latest",
+
     
 
 
-       
 
 
-   "dotenv": "latest",
+
+"@langchain/community": "latest",
     
 
 
-       
 
 
-   "express": "^4.21.2",
+
     
 
 
-       
 
 
-   "langchain": "latest"
+
+"@langchain/openai": "latest",
     
 
 
-   }
+
+
+
+    
+
+
+
+
+
+"dotenv": "latest",
+    
+
+
+
+
+
+    
+
+
+
+
+
+"express": "^4.21.2",
+    
+
+
+
+
+
+    
+
+
+
+
+
+"hnswlib-node": "^3.0.0",
+    
+
+
+
+
+
+    
+
+
+
+
+
+"langchain": "latest"
+    
+
+
+
+
+
+}
 }
