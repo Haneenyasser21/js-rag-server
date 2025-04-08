@@ -2,10 +2,23 @@ import { config } from "dotenv";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { HNSWLib } from "@langchain/community/vectorstores/hnswlib";
 import path from "path";
+import fs from "fs/promises"; // Add fs to check if the directory exists
 
 config();
 
 const STORE_PATH = path.join(process.cwd(), "vector_store");
+console.log("STORE_PATH:", STORE_PATH);
+
+// Check if vector_store directory exists
+(async () => {
+  try {
+    const dirContents = await fs.readdir(STORE_PATH);
+    console.log("vector_store directory contents:", dirContents);
+  } catch (error) {
+    console.error("Failed to read vector_store directory:", error.message);
+  }
+})();
+
 const embeddings = new OpenAIEmbeddings({
   openAIApiKey: process.env.OPENAI_API_KEY,
 });
@@ -18,7 +31,7 @@ let vectorStore;
     vectorStore = await HNSWLib.load(STORE_PATH, embeddings);
     console.log("Vector store loaded successfully");
   } catch (error) {
-    console.error("Failed to load vector store:", error.message);
+    console.error("Failed to load vector store:", error.message, error.stack);
   }
 })();
 
@@ -52,7 +65,7 @@ export default async function handler(req, res) {
 
     res.status(200).json(results.map((doc) => ({ content: doc.pageContent, metadata: doc.metadata })));
   } catch (error) {
-    console.log("Error:", error.message);
+    console.log("Error in handler:", error.message);
     res.status(500).json({ error: error.message });
   }
 }
