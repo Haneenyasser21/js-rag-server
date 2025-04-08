@@ -1,34 +1,72 @@
 {
-    
+    
+
+
    "name": "js-rag-server",
-    
+    
+
+
    "version": "1.0.0",
-    
+    
+
+
    "type": "module",
-    
+    
+
+
    "scripts": {
-    
-       
-   "start": "node server.js"
-    
+    
+
+
+       
+
+
+   "start": "node local-server.js"
+    
+
+
    },
-    
+    
+
+
    "dependencies": {
-    
-       
+    
+
+
+       
+
+
    "@langchain/community": "latest",
-    
-       
+    
+
+
+       
+
+
    "@langchain/openai": "latest",
-    
-       
+    
+
+
+       
+
+
    "dotenv": "latest",
-    
-       
+    
+
+
+       
+
+
    "express": "^4.21.2",
-    
-       
+    
+
+
+       
+
+
    "langchain": "latest"
-    
+    
+
+
    }
 }
